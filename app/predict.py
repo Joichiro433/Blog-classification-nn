@@ -18,7 +18,7 @@ def predict(images):
 if __name__ == '__main__':
     (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
     test_images, test_labels = test_images[:10], test_labels[:10]  # 10枚だけ推論をおこなう
-    test_images, _ = preprocess_dataset(images=test_images, labels=test_labels)
+    test_images = preprocess_dataset(images=test_images)
     pred = predict(test_images)
     print(f'prediction: {pred}')
     print(f'labels: {test_labels}')
